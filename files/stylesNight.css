@@ -1,0 +1,503 @@
+/* Night Mode Styles */
+
+body.night-mode {
+	background-color: black;
+	background-image: url(../images/BG_night.jpeg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	transition: all 0.5s;
+}
+
+body.night-mode header {
+	background-color: #0B1344;
+	border-bottom: 3px solid lightskyblue;
+	box-shadow: 1px 1px 10px cyan;
+	transition: all 0.5s;
+}
+
+body.night-mode #logo h1 {
+  /*Thick border and shadow all around*/
+	text-shadow:
+		3px 3px black,
+		-3px -3px black,
+		3px -3px black,
+		-3px 3px black,
+		3px 3px 15px lightskyblue,
+		-3px -3px 15px lightskyblue,
+		3px -3px 15px lightskyblue,
+		-3px 3px 15px lightskyblue;
+	transition: all 0.5s;
+}
+
+body.night-mode #logo h1:hover {
+	animation: font-color2 1.1s ease;
+}
+
+/*Another animation for my logo text*/
+@keyframes font-color2 {
+	0%,
+	100% {
+		text-shadow:
+			3px 3px black,
+			-3px -3px black,
+			3px -3px black,
+			-3px 3px black,
+			3px 3px 15px lightskyblue,
+			-3px -3px 15px lightskyblue,
+			3px -3px 15px lightskyblue,
+			-3px 3px 15px lightskyblue;
+	}
+
+	50% {
+		text-shadow:
+			3px 3px white,
+			-3px -3px white,
+			3px -3px white,
+			-3px 3px white,
+			3px 3px 25px cyan,
+			-3px -3px 25px cyan,
+			3px -3px 25px cyan,
+			-3px 3px 25px cyan;
+		color: palevioletred;
+	}
+}
+
+body.night-mode #nav-main ul li a {
+	text-shadow: 1px 1px 5px teal;
+	color: lightskyblue;
+}
+
+body.night-mode #nav-main ul li #nav-home {
+	text-shadow: 1px 1px 1px palevioletred;
+	color: pink;
+}
+
+body.night-mode #nav-main ul li a:hover {
+	text-shadow: 1px 1px 15px cyan;
+}
+
+body.night-mode #nav-main ul li #nav-home:hover {
+	text-shadow: 1px 1px 15px pink;
+}
+
+body.night-mode #dark-mode {
+	background-color: #5FB8B2;
+	box-shadow: 1px 1px 5px yellow;
+	transition: all 0.2s;
+}
+
+body.night-mode #dark-mode:hover {
+	box-shadow: 1px 1px 10px white;
+	filter: brightness(1.2);
+}
+
+body.night-mode #hamburger-icon {
+	box-shadow: 1px 1px 10px lightskyblue;
+	border-radius: 50%;
+}
+
+
+/* Main Home Page Night Styles */
+
+body.night-mode #main-image {
+	animation: aura-beat2 3s infinite;
+}
+
+/* Main image aura animation*/
+@keyframes aura-beat2 {
+	0%,
+	100% {
+		filter: drop-shadow(0 0 10px lightskyblue);
+	}
+
+	50% {
+		filter: drop-shadow(0 0 50px lightskyblue);
+	}
+}
+
+body.night-mode #main-image:hover {
+	animation: none;
+	filter: drop-shadow(0 0 50px pink);
+}
+
+body.night-mode #portfolio-main h1 {
+	color: hotpink;
+	text-shadow: 1.5px 1.5px 1px pink,
+		-1.5px -1.5px 1px pink,
+		1.5px -1.5px 1px pink,
+		-1.5px 1.5px 1px pink,
+		4px 4px 5px white,
+		5px 5px 1px magenta,
+		4px 4px 20px white;
+}
+
+body.night-mode #portfolio-main p {
+	color: hotpink;
+	text-shadow: 1.5px 1.5px 1px pink,
+		-1.5px -1.5px 1px pink,
+		1.5px -1.5px 1px pink,
+		-1.5px 1.5px 1px pink,
+		3px 3px 4px white,
+		4px 4px 1px magenta,
+		3px 3px 20px white;
+}
+
+body.night-mode .my-button {
+	color: white;
+	text-shadow:
+		1px 1px 1px black,
+		-1px -1px 1px black,
+		1px -1px 1px black,
+		-1px 1px 1px black;
+	box-shadow: 1px 1px 10px white;
+  /* Alt linear gradient color for another button*/
+	background-image: linear-gradient(-310deg, royalblue 0%, cyan 50%, royalblue 100%);
+}
+
+body.night-mode .my-button:hover {
+	box-shadow: 0px 0px 20px cyan;
+}
+
+body.night-mode .my-button:active {
+	color: lightgray;
+	box-shadow: 0px 0px 10px gray;
+}
+
+
+body.night-mode #home-socials img {
+	filter: drop-shadow(1px 1px 5px white);
+}
+
+body.night-mode #home-socials img:hover {
+	filter: hue-rotate(90deg) drop-shadow(0 0 10px pink);
+}
+
+/*About Styles Night*/
+
+body.night-mode #about-image {
+	border: solid 1px lightskyblue;
+	box-shadow: 0px 0px 20px white;
+	background-color: cyan;
+}
+
+body.night-mode #about-bio h1 {
+	color: hotpink;
+	text-shadow: 1.5px 1.5px 1px pink,
+		-1.5px -1.5px 1px pink,
+		1.5px -1.5px 1px pink,
+		-1.5px 1.5px 1px pink,
+		4px 4px 5px white,
+		5px 5px 1px magenta;
+}
+
+body.night-mode #about-bio p {
+	color: hotpink;
+	text-shadow: 1.5px 1.5px 1px pink,
+		-1.5px -1.5px 1px pink,
+		1.5px -1.5px 1px pink,
+		-1.5px 1.5px 1px pink,
+		3px 3px 4px white,
+		4px 4px 1px magenta,
+		3px 3px 20px white;
+}
+
+/*Certificates Night Styles*/
+
+body.night-mode #certifications h1 {
+	color: hotpink;
+	text-shadow: 1.5px 1.5px 1px pink,
+		-1.5px -1.5px 1px pink,
+		1.5px -1.5px 1px pink,
+		-1.5px 1.5px 1px pink,
+		4px 4px 5px white,
+		5px 5px 1px magenta,
+		4px 4px 20px white;
+}
+
+body.night-mode .certificate-card {
+	background-color: rgba(173, 216, 230, 0.6);
+	box-shadow: 0 0px 10px white;
+}
+
+body.night-mode .certificate-card:hover {
+	transform: scale(1.05);
+}
+
+body.night-mode .certificate-card img {
+	border: 10px ridge rgb(201, 107, 36);
+	box-shadow: 1px 1px 5px black;
+}
+
+body.night-mode .certificate-card h3 {
+	color: white;
+	text-shadow:
+		1px 1px 1px black,
+		-1px -1px 1px black,
+		1px -1px 1px black,
+		-1px 1px 1px black;
+}
+
+body.night-mode .certificate-card p {
+	color: white;
+	text-shadow:
+		1px 1px 1px black,
+		-1px -1px 1px black,
+		1px -1px 1px black,
+		-1px 1px 1px black;
+}
+
+body.night-mode .certificate-card button {
+	background-color: palevioletred;
+	color: white;
+}
+
+body.night-mode .certificate-card button:hover {
+	background-color: cyan;
+}
+
+/*Project Night Styles*/
+
+body.night-mode #projects h1 {
+	color: hotpink;
+	text-shadow: 1.5px 1.5px 1px pink,
+		-1.5px -1.5px 1px pink,
+		1.5px -1.5px 1px pink,
+		-1.5px 1.5px 1px pink,
+		4px 4px 5px white,
+		5px 5px 1px magenta,
+		4px 4px 20px white;
+}
+
+body.night-mode .card {
+	border: 5px solid hotpink;
+	box-shadow: 0 0 8px pink;
+}
+
+body.night-mode .overlay {
+	background: rgba(128, 128, 128, 0.5);
+	color: black;
+	text-shadow:
+		1px 1px 1px white,
+		-1px -1px 1px white,
+		1px -1px 1px white,
+		-1px 1px 1px white;
+}
+
+body.night-mode .card:hover .hover {
+	border: 5px solid hotpink;
+}
+
+/*Skill Night Styles*/
+
+body.night-mode #skills h1 {
+	color: hotpink;
+	text-shadow: 1.5px 1.5px 1px pink,
+		-1.5px -1.5px 1px pink,
+		1.5px -1.5px 1px pink,
+		-1.5px 1.5px 1px pink,
+		4px 4px 5px white,
+		5px 5px 1px magenta,
+		4px 4px 20px white;
+}
+
+body.night-mode .progress-bar {
+    /* Adds color to linear progress bar*/
+	background: conic-gradient(cyan var(--percentage, 0%),
+			rgba(135, 206, 250, 0.5) var(--percentage, 0%));
+	box-shadow: 0 1px 10px cyan;
+}
+
+body.night-mode .progress-bar::after {
+	background: lightskyblue;
+}
+
+body.night-mode .skill-box {
+	background-color: rgba(135, 206, 250, 0.75);
+	box-shadow: 0 0 10px cyan;
+}
+
+body.night-mode .skill-box h2 {
+	color: blue;
+}
+
+body.night-mode .skill-bar {
+	background-color: white;
+	box-shadow: 0 0 10px teal;
+}
+
+body.night-mode .skill {
+	/* Adds color to linear progress bar*/
+	background-color: cyan;
+}
+
+/*Services Night Styles*/
+
+body.night-mode #services h1 {
+	color: hotpink;
+	text-shadow: 1.5px 1.5px 1px pink,
+		-1.5px -1.5px 1px pink,
+		1.5px -1.5px 1px pink,
+		-1.5px 1.5px 1px pink,
+		4px 4px 5px white,
+		5px 5px 1px magenta,
+		4px 4px 20px white;
+}
+
+body.night-mode #services h2 {
+	color: hotpink;
+	text-shadow: 1.5px 1.5px 1px pink,
+		-1.5px -1.5px 1px pink,
+		1.5px -1.5px 1px pink,
+		-1.5px 1.5px 1px pink,
+		3px 3px 4px white,
+		4px 4px 1px magenta,
+		3px 3px 20px white;
+}
+
+body.night-mode .service-card {
+	background-color: rgba(0, 255, 255, 0.5);
+	box-shadow: 1px 1px 10px cyan;
+}
+
+body.night-mode .service-card h4 {
+	color: white;
+	text-shadow: 1.5px 1.5px 1px mediumvioletred,
+		-1.5px -1.5px 1px mediumvioletred,
+		1.5px -1.5px 1px mediumvioletred,
+		-1.5px 1.5px 1px mediumvioletred;
+}
+
+/*Contacts Night Styles*/
+body.night-mode form {
+	box-shadow: 1px 1px 10px yellow;
+	border: 3px solid greenyellow;
+}
+
+body.night-mode #contacts h1 {
+	color: hotpink;
+	text-shadow: 1.5px 1.5px 1px pink,
+		-1.5px -1.5px 1px pink,
+		1.5px -1.5px 1px pink,
+		-1.5px 1.5px 1px pink,
+		4px 4px 5px white,
+		5px 5px 1px magenta,
+		4px 4px 20px white;
+}
+
+body.night-mode #contacts h2 {
+	color: crimson;
+	text-shadow: 1.5px 1.5px 1px pink,
+		-1.5px -1.5px 1px pink,
+		1.5px -1.5px 1px pink,
+		-1.5px 1.5px 1px pink,
+		0 0 10px black;
+}
+
+body.night-mode #contacts h3 {
+	color: crimson;
+	text-shadow: 1px 1px 1px pink,
+		-1px -1px 1px pink,
+		1px -1px 1px pink,
+		-1px 1px 1px pink,
+		0 0 5px black;
+}
+
+body.night-mode label {
+	color: yellowgreen;
+	text-shadow: 1px 1px 1px black,
+		-1px -1px 1px black,
+		1px -1px 1px black,
+		-1px 1px 1px black,
+		1px 1px 1px black;
+}
+
+body.night-mode input,
+body.night-mode textarea {
+	color: black;
+	border: 2px solid hotpink;
+}
+
+body.night-mode input:hover,
+body.night-mode textarea:hover {
+	border: 2px solid orange;
+	box-shadow: 1px 1px 10px hotpink;
+}
+
+body.night-mode input:focus,
+body.night-mode textarea:focus {
+	background-color: white;
+}
+
+body.night-mode .my-button2 {
+	color: white;
+	text-shadow:
+		1px 1px 1px black,
+		-1px -1px 1px black,
+		1px -1px 1px black,
+		-1px 1px 1px black;
+	box-shadow: 1px 1px 10px black;
+	background-image: linear-gradient(-310deg, hotpink 0%, orange 50%, hotpink 100%);
+}
+
+body.night-mode .my-button2:hover {
+	box-shadow: 0px 0px 15px orange;
+}
+
+body.night-mode .my-button2:active {
+	color: lightgray;
+	box-shadow: 0px 0px 10px black;
+}
+
+/*Footer Night Styles*/
+
+body.night-mode footer {
+	background-color: #0B1344;
+	border-top: 3px solid lightskyblue;
+	box-shadow: 1px 1px 10px cyan;
+}
+
+body.night-mode .contact-buttons p,
+body.night-mode .footer-social p {
+	text-shadow:
+		1.5px 1.5px black,
+		-1.5px -1.5px black,
+		1.5px -1.5px black,
+		-1.5px 1.5px black,
+		2.5px 2.5px white,
+		-2.5px -2.5px white,
+		2.5px -2.5px white,
+		-2.5px 2.5px white;
+}
+
+body.night-mode .contact-buttons img {
+	border: 2px solid white;
+	box-shadow: 0 0 5px white;
+}
+
+body.night-mode .contact-buttons img:hover {
+	box-shadow: 0px 0px 10px white;
+}
+
+body.night-mode .footer-social img {
+	box-shadow: 0 0 5px white;
+}
+
+body.night-mode .footer-social img:hover {
+	box-shadow: 0 0 7px white;
+}
+
+body.night-mode .footer-bottom p {
+	color: white;
+}
+
+body.night-mode .top-button {
+	background-color: cyan;
+	color: black;
+	box-shadow: 0 0 5px white;
+}
+
+body.night-mode .top-button:hover {
+	background-color: hotpink;
+}

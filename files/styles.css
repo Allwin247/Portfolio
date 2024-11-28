@@ -1,0 +1,989 @@
+/*Custom fonts for my portfolio*/
+@font-face {
+	font-family: "Pricedown";
+	src: url(../fonts/pricedown.otf) format('opentype');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Rage";
+	src: url(../fonts/rage.TTF) format('truetype');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Ramdone";
+	src: url(../fonts/ramdone.ttf) format('truetype');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bayland";
+	src: url(../fonts/bayland.ttf) format('truetype');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Twentieth";
+	src: url(../fonts/twentieth.ttf) format('truetype');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "DOS";
+	src: url(../fonts/dos.ttf) format('truetype');
+	font-display: swap;
+}
+
+/* Curtain Intro Styles */
+
+#curtain-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    /* Ensures it’s above everything else */
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: curtainFadeOut 1s 3.1s forwards;
+}
+
+
+#curtain-greeting {
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 4rem;
+	font-family: "Pricedown", sans-serif;
+	color: white;
+	/* Thicker text shadow outline */
+	text-shadow: 3px 3px black, -3px -3px black, 3px -3px black, -3px 3px black;
+	opacity: 0;
+    /* Ensures text is above the image */
+	z-index: 11;
+	animation: greetingAnimation 1s forwards, curtainFadeOut 1s 2.1s ease-in forwards;
+	/* Fade away the whole greeting container */
+}
+
+#curtain-greeting p {
+	margin: 10px;
+    /* Initially invisible */
+	opacity: 0;
+	transform: translateX(-30px);
+	animation: fadeIn 1s forwards, fadeOut 1s forwards;
+    /* Delay each <p> element with an incremental delay of 0.5s each */
+	animation-delay: calc(0.5s * var(--i));
+	z-index: 11;
+	/* Ensures the text is above the image */
+}
+
+#curtain-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	animation: pullImageUp 1s 3s forwards;
+	z-index: 10;
+	/* Ensures the image is beneath the text */
+}
+
+/* Animation for greeting text */
+@keyframes greetingAnimation {
+	0% {
+		opacity: 0; 
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Animation for text appearing one by one from left to right */
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Animation for text disappearing one by one */
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+		filter: brightness(1); /* To make it readable*/
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(20px);
+	}
+}
+
+/* Pull the image upwards after the text disappears */
+@keyframes pullImageUp {
+	0% {
+		transform: translateY(0);
+	}
+
+	100% {
+		transform: translateY(-100%);
+	}
+}
+
+/* Animation to clear curtain */
+@keyframes curtainFadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		display: none;
+		pointer-events: none;
+		/* Disable interactions */
+	}
+}
+
+/* Global Styles */
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	/* Smooth scrolling through sections*/
+	animation: overflow-hider 5s ease-in;
+
+}
+
+
+/*Hides scroll bar to display intro*/
+@keyframes overflow-hider {
+	0% {
+		overflow: hidden;
+	}
+
+	100% {
+		overflow: visible;
+	}
+
+}
+
+body[hidden] {
+	visibility: hidden;
+	/* Initially hides the body for curtain intro */
+
+}
+
+body {
+	background-color: none; /* Meant to remove flashing while switching modes*/
+	background-image: url(../images/BG_day.jpg);
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+/* Header Styles */
+
+header {
+	position: fixed;
+	width: 100vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 30px;
+	z-index: 5;
+   /*Smooth transition while switching between between modes*/
+	transition: all 0.5s;
+	/*Used 'transition: all 0.5s;' plentifully across style sheets to avoid rough transition while switching*/
+}
+
+#logo {
+	padding-right: 10px;
+}
+
+#logo a {
+	text-decoration: none;
+}
+
+#logo h1 {
+	margin: 0;
+	padding-bottom: 10px;
+	font-size: 3rem;
+	font-family: "Pricedown", sans-serif;
+	color: white;
+}
+
+#nav-main {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+#nav-main ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+#nav-main ul li {
+  margin-right: 20px;
+}
+
+#nav-main ul li a {
+  padding: 10px;
+  font-family: "Rage", sans-serif;
+  text-decoration: none;
+  font-size: 2.2rem;
+  transition: color 0.5s, text-shadow 0.1s;
+}
+
+#hamburger-icon {
+  display: none;
+  height: 45px;
+  width: 45px;
+}
+
+#hamburger-icon img {
+  position: relative;
+  bottom: 2.4px;
+  left: -7.3px;
+  height: 45px;
+  width: 45px;
+}
+
+#dark-mode {
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 50%;
+	text-shadow: 1px 1px 1px black;
+	transition: all 0.5s;
+}
+
+#dark-mode:active {
+	transform: scale(0.85);
+}
+
+
+
+/* Home Page Styles */
+
+main {
+	transition: all 0.5s;
+}
+
+#home {
+    position: relative;
+	padding-top: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100dvh;
+
+}
+
+#main-image {
+	flex-basis: 20%;
+	padding-top: 30px;
+	width: 20dvw;
+	height: auto;
+	margin-right: 10px;
+	transition: all 0.5s;
+}
+
+#portfolio-main {
+	flex-basis: 80%;
+	padding: 10px;
+	display: flex;
+    flex-wrap: wrap;
+	text-align: center;
+	flex-direction: column;
+	justify-content: center;
+	cursor: default;
+	/* Default cursor while hovering text*/
+}
+
+.welcome-paragraph1 {
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+
+.welcome-paragraph2 {
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+#portfolio-main h1 {
+	font-family: "Bayland", sans-serif;
+	font-size: 4rem;
+	word-spacing: 5px;
+	margin: 0;
+	filter: contrast(1.4);
+	/*Added contrast to make text readable*/
+	transition: all 0.5s;
+}
+
+#portfolio-main p {
+	font-family: "Ramdone", sans-serif;
+	font-size: 2.5rem;
+	word-spacing: 2px;
+	filter: contrast(1.4);
+	transition: all 0.5s;
+}
+
+#home-button {
+	display: flex;
+	justify-content: center;
+	margin: 30px;
+	z-index: 1;
+}
+
+.my-button {
+	font-family: "Ramdone", sans-serif;
+	font-size: 22px;
+	margin: 10px;
+	padding: 10px 30px;
+	text-align: center;
+	background-size: 200% auto;
+	border-radius: 40px;
+	border: 0px;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+.my-button:hover {
+	background-position: center right;
+	/* Cool gradient effect on buttons*/
+	transform: scale(1.05);
+}
+
+.my-button:active {
+	transform: scale(0.95);
+	box-shadow: 0px 0px 10px black;
+}
+
+#home-socials {
+	display: flex;
+	justify-content: center;
+}
+
+#home-socials img {
+	height: 40px;
+	width: 40px;
+	margin: 7px;
+	margin-bottom: 0;
+	transition: all 0.2s;
+}
+
+#home-socials img:active {
+	transform: scale(0.95);
+}
+
+
+/* About Page Styles*/
+
+#about {
+	display: flex;
+    flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	height: 100dvh;
+	transition: all 0.5s;
+}
+
+#about-image {
+	height: 190px;
+	width: 200px;
+	border-radius: 50% 50% 30% 30%;
+	/*Radius to make border look like sunglasses lens*/
+	margin: 10px;
+	padding: 10px;
+	transition: all 0.5s;
+}
+
+#about-bio {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	cursor: default;
+	transition: all 0.5s;
+}
+
+#about-bio h1 {
+	font-family: "Bayland", serif;
+	font-size: 4rem;
+	margin-bottom: 0;
+	filter: contrast(1.4);
+	margin-top: 7%;
+	transition: all 0.5s;
+}
+
+#about-bio p {
+	font-family: "Ramdone", serif;
+	font-size: 2.4rem;
+	align-items: center;
+	filter: contrast(1.4);
+	margin-bottom: 0;
+	word-spacing: 5px;
+	padding-left: 50px;
+	padding-right: 50px;
+	transition: all 0.5s;
+}
+
+#about button {
+	margin-top: 3%;
+	transition: all 0.5s;
+}
+
+/* Certificate Styles */
+
+#certifications {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100dvh;
+	text-align: center;
+	padding: 50px 0;
+	cursor: default;
+	transition: all 0.5s;
+}
+
+#certifications h1 {
+	font-size: 4em;
+	margin-top: 5.5%;
+	margin-bottom: 25px;
+	filter: contrast(1.4);
+	font-family: "Bayland", serif;
+}
+
+.certificates-container {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+.certificate-card {
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	width: 250px;
+	padding: 20px;
+	padding-top: 10px;
+	text-align: center;
+	transition: all 0.5s;
+}
+
+.certificate-card:hover {
+	transform: scale(1.05);
+}
+
+.certificate-card img {
+	align-self: center;
+	width: 70%;
+	height: auto;
+	border-radius: 8px;
+}
+
+.certificate-card h3 {
+	font-family: "Twentieth", serif;
+	font-size: 1.5em;
+	margin-top: 0;
+}
+
+.certificate-card p {
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-weight: bold;
+	flex-grow: 1;
+}
+
+.certificate-card button {
+	
+	font-family: "Georgia", serif;
+	width: 40%;
+	align-self: center;
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+#certificate-button {
+	align-items: center;
+	justify-content: center	;
+	width: 210px;
+	margin: 0 auto;	
+	margin-top: 15px;
+}
+
+/*Projects Styles*/
+
+#projects {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30%;
+	text-align: center;
+	transition: all 0.5s;
+	height: auto;
+  cursor: default;
+  transition: all 0.5s;
+  height: 100vh;
+}
+
+#projects h1 {
+	margin-top: 7%;
+	font-size: 4em;
+	filter: contrast(1.4);
+	margin-bottom: 30px;
+	font-family: "Bayland", serif;
+}
+
+
+.project-cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	
+	/* Divides projects card 3x2*/
+	gap: 20px;
+	justify-items: center;
+  transition: all 0.5s
+}
+
+.card {
+	position: relative;
+	width: 350px;
+	height: 200px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+.image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	transition: all 0.5s;
+}
+
+.hover {
+	z-index: 0;
+	/* Hover image sits above the original image */
+	opacity: 0;
+  border-radius: 10%;
+	transform: scale(1.05);
+  transition: all 0.5s
+}
+
+.card:hover .original {
+	opacity: 0;
+	/* Make original image fade out when hovered */
+	transform: scale(1.05);
+}
+
+.card:hover .hover {
+	opacity: 1;
+	/* Make hover image visible when hovered */
+	transform: scale(1.05);
+  border-radius: 10px;
+}
+
+.overlay {
+	/* Project description overlay*/
+	position: absolute;
+	bottom: 0;
+  left: -4px;  /* Fine tuning the overlay */
+	width: 103%; 
+	height: 100%;
+	opacity: 0;
+	box-sizing: border-box;
+}
+
+.card:hover .overlay {
+	opacity: 1;
+}
+
+.text {
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+}
+
+.text h2 {
+	font-family: "Consolas", serif;
+	font-size: 1.5em;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.text p {
+	font-family: "Arial", serif;
+	font-size: 1.1em;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+#project-button {
+	margin-top: 35px;
+}
+
+/* Skill Main Styles */
+
+#skills {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100dvh;
+	cursor: default;
+
+}
+
+#skills h1 {
+	font-family: "Bayland", serif;
+	font-size: 4rem;
+	filter: contrast(1.4);
+	margin-bottom: 2%;
+	transition: all 0.5s;
+}
+
+/* Services Main Styles */
+
+#services {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100dvh;
+	cursor: default;
+}
+
+#services h1 {
+	font-family: "Bayland", serif;
+	font-size: 4rem;
+	filter: contrast(1.4);
+	margin-bottom: 2%;
+	transition: all 0.5s;
+}
+
+#services h2 {
+	font-family: "Ramdone", serif;
+	font-size: 2rem;
+	filter: contrast(1.4);
+	margin-top: 0%;
+	margin-bottom: 20px;
+	transition: all 0.5s;
+}
+
+.services-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	/* Divides cards by 4x2 */
+	gap: 15px;
+}
+
+.service-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	height: 200px;
+	padding: 10px;
+	border-radius: 8px;
+	transition: all 0.5s ease;
+}
+
+.service-card:hover {
+	transform: translateY(-10px);
+}
+
+.service-text {
+	z-index: 1;
+	text-align: center;
+	transition: all 0.5s;
+}
+
+.service-card h4 {
+	font-size: 1.5rem;
+	font-family: "Twentieth", serif;
+	margin: 30px 0;
+}
+
+.service-card p {
+	font-size: 1rem;
+	font-family: "Twentieth", serif;
+	color: white;
+  /*Thick shadow all around the text*/
+	text-shadow: 1px 1px 1px black,
+		-1px -1px 1px black,
+		1px -1px 1px black,
+		-1px 1px 1px black;
+}
+
+.service-card img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 40%;
+	object-fit: contain;
+	opacity: 0.75;
+	transition: all 0.5s;
+}
+
+/* Main Contact Styles */
+#contacts {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100dvh;
+}
+
+
+form {
+	width: 100%;
+	max-width: 600px;
+	padding: 20px;
+	border-radius: 8px;
+	margin-bottom: 0px;
+}
+
+#contacts h1 {
+	font-family: "Bayland", serif;
+	font-size: 4rem;
+	filter: contrast(1.4);
+	margin-top: 10%;
+	margin-bottom: 30px;
+	transition: all 0.5s;
+	text-align: center;
+	cursor: default;
+}
+
+#contacts h2 {
+	font-family: "Ramdone", serif;
+	text-align: center;
+	font-size: 1.6em;
+	margin: 0;
+	word-spacing: 4px;
+	cursor: default;
+	transition: all 0.5s;
+}
+
+#contacts h3 {
+	font-family: "Ramdone", serif;
+	text-align: center;
+	margin-bottom: 20px;
+	word-spacing: 4px;
+	cursor: default;
+	transition: all 0.5s;
+}
+
+form {
+  /*Contact Postcard Image*/
+	background-image: url(../images/flamingo.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	font-family: "Ramdone", serif;
+	margin-bottom: 50px;
+	transition: all 0.5s;
+}
+
+
+label {
+	display: block;
+	font-weight: bold;
+	margin-top: 10px;
+	transition: all 0.5s;
+}
+
+input,
+textarea {
+	font-family: "Twentieth", serif;
+	font-weight: bold;
+	font-size: 1rem;
+	width: 100%;
+	padding: 10px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 0px;
+	background-color: rgba(255, 255, 255, 0.5);
+	transition: all 0.5s;
+}
+
+#form-name {
+	text-transform: capitalize;
+	/* Capitalizes first letter of the name */
+}
+
+#form-email {
+	text-transform: lowercase;
+	/* Type Email in all lowercase*/
+}
+
+textarea {
+	resize: vertical;
+	/* Drag textarea to add more text to the message */
+	height: 150px;
+}
+
+.my-button2 {
+	display: block;
+	font-family: "Ramdone", sans-serif;
+	width: 50%;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	margin: 0 auto;
+	margin-top: 2px;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 2rem;
+	background-size: 200% auto;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+.my-button2:hover {
+	background-position: center right;
+	transform: scale(1.05);
+}
+
+.my-button2:active {
+	transform: scale(0.95);
+	box-shadow: 0px 0px 10px black;
+}
+
+/*Footer Styles*/
+
+footer {
+	color: white;
+	text-align: center;
+	cursor: default;
+	margin-top: 2%;
+	transition: all 0.5s;
+}
+
+.footer-container {
+	margin: 0 auto;
+	padding-top: 0%;
+	padding-left: 20px;
+	padding-right: 20px;
+	transition: all 0.5s;
+}
+
+.footer-buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.contact-buttons p,
+.footer-social p {
+	margin-top: 10px;
+	font-family: "Pricedown", serif;
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+	text-shadow:
+		1.5px 1.5px black,
+		-1.5px -1.5px black,
+		1.5px -1.5px black,
+		-1.5px 1.5px black;
+}
+
+.contact-buttons img {
+	height: 40px;
+	width: 40px;
+	margin: 5px;
+	border-radius: 30%;
+	transition: all 0.1s;
+}
+
+.contact-buttons img:hover {
+	filter: brightness(1.4);
+	transform: scale(1.1);
+}
+
+.contact-buttons img:active {
+	transform: scale(0.9);
+}
+
+.footer-social a {
+	margin: 0 10px;
+	color: white;
+	text-decoration: none;
+}
+
+.footer-social img {
+	height: 40px;
+	width: 40px;
+	border-radius: 10%;
+	transition: all 0.1s;
+}
+
+.footer-social img:hover {
+	transform: scale(1.1);
+}
+
+.footer-social img:active {
+	transform: scale(0.9);
+}
+
+.footer-bottom {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer-bottom p {
+	text-align: center;
+	margin-top: 0px;
+	font-size: 15px;
+}
+
+.top-button {
+	text-align: center;
+	width: 10%;
+	height: 30px;
+	border: none;
+	cursor: pointer;
+	font-size: 12px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	transition: background-color 0.3s;
+}

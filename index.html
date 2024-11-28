@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Allwin Paul's personal web portfolio">
+      <meta name="author" content="Allwin Paul">
+      <meta name="keywords" content="web development, full-stack developer, projects">
+      <title>My Portfolio</title>
+      <link rel="icon" href="images/icons/cc.png">
+
+      <link rel="stylesheet" href="files/styles.css">
+      <!--Styles for Day Mode -->
+      <link rel="stylesheet" href="files/stylesDay.css" id="day-stylesheet">
+      <!--Styles for Night Mode -->
+      <link rel="stylesheet" href="files/stylesNight.css" id="night-stylesheet">
+      <!--Styles for Circular & Linear progress bar (Also includes media queries) -->
+      <link rel="stylesheet" href="files/progress.css">
+      
+      <!--Script to switch between Day & Night Mode -->
+      <script src="files/script.js"></script>
+   </head>
+
+   <!--Default to day mode, and keep it hidden, as it's easier than managing z-index for everything.-->
+   <body class="day-mode" hidden>
+      
+      <!--Intro Wallpaper -->
+      <div id="curtain-container" role="presentation">
+         <div id="curtain-greeting">
+            <p style="--i: 0;">Welcome</p>
+            <p style="--i: 1;">To</p>
+            <p style="--i: 2;">My</p>
+            <p style="--i: 3;">Portfolio</p>
+         </div>
+         <img id="curtain-image" src="images/miami.jpg" alt="Florida curtain image">
+      </div>
+
+      <!-- Header Section -->
+      <header>
+         <div id="logo">
+            <a href="index.html" aria-label="Reload home page">
+               <h1>Allwin Paul</h1>
+            </a>
+         </div>
+         <nav id="nav-main" aria-label="Main navigation">
+            <ul id="nav-links">
+               <li><a href="#home" id="nav-home">Home</a></li>
+               <li><a href="#about">About</a></li>
+               <li><a href="#skills">Skills</a></li>
+               <li><a href="#services">Services</a></li>
+               <li><a href="#contacts">Contact</a></li>
+            </ul>
+         </nav>
+         <!-- Button that toggles between Night and Dark mode -->
+         <button id="dark-mode" onclick="toggleTheme()" aria-label="Switch to dark mode">🌛</button>
+         <!-- Hamburger icon for mobile/tab menu -->
+         <button id="hamburger-icon" aria-label="Mobile menu" onclick="toggleMenu()">
+         <img id="hamburger-image" src="images/icons/menu_day.png" alt="Menu" />
+         </button>
+      </header>
+
+      <main>
+         <!--Main Home Page-->
+         <section id="home">
+            <!--Profile Image-->
+            <img id="main-image" src="images/Shirt.png" alt="A photo of me">
+            <div id="portfolio-main">
+               <!--My heading and intro text-->
+               <h1>Hey There! I'm Allwin Paul,</h1>
+               <p class="welcome-paragraph1">an excited developer on a journey to master Full Stack development.</p>
+               <p class="welcome-paragraph2">"Welcome to my Portfolio—your Tropical Web Paradise.</p>
+               <p class="welcome-paragraph2">I create sun-soaked, seamless web experiences, from the Front-end surf to the Back-end shores."</p>
+               <div id="home-button">
+                  <button onclick="window.location.href='#contacts'" class="my-button" aria-label="Contact Button">Contact Me</button>
+                  <!--Button opens sample file on another page-->
+                  <button onclick="window.open('files/test.pdf', '_blank')" class="my-button" aria-label="Download Button">Download Resume</button>
+               </div>
+               <!--Social media links-->
+               <div id="home-socials">
+                  <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><img id="facebook-icon" src="images/icons/facebook_day.png" alt="Facebook logo"></a>
+                  <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><img id="twitter-icon" src="images/icons/twitter_day.png" alt="Twitter logo"></a>
+                  <a href="https://www.github.com" target="_blank" aria-label="GitHub"><img id="github-icon" src="images/icons/github_day.png" alt="GitHub logo logo"></a>
+                  <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><img id="linkedin-icon" src="images/icons/linkedin_day.png" alt="LinkedIn logo"></a>
+               </div>
+            </div>
+         </section>
+
+         <!--About Section-->
+         <section id="about">
+            <div id="about-bio">
+               <h1>About Me</h1>
+               <img id="about-image" src="images/Glass_day.png" alt="Another photo of me with glasses">
+               <p>I'm a post-graduate in Computer Applications Development with a strong passion for becoming a full-stack developer. I enjoy working on DIY projects, exploring electronics, and diving into IoT automation. My creative side thrives in game development, where I enjoy bringing ideas to life. I'm always eager to learn and explore new opportunities in Tech and Development.</p>
+               <button class="my-button" onclick="window.location.href='#certifications'">Know More</button>
+            </div>
+         </section>
+
+         <!--Certificates Section-->
+         <section id="certifications">
+            <h1>My Certificates</h1>
+            <div class="certificates-container">
+               <div class="certificate-card">
+                  <h3>Java Masterclass</h3>
+                  <img src="images/Java Masterclass.jpg" alt="Certificate 1">
+                  <p>The Java Masterclass certificate validates my proficiency in Java programming, demonstrating my ability to develop robust applications using core Java concepts, frameworks, and best practices.</p>
+                  <!--Opens my certificate on another tab-->
+                  <button onclick="window.open('images/Java Masterclass.jpg', '_blank')">View</button>
+               </div>
+               <div class="certificate-card">
+                  <h3>Core Java</h3>
+                  <img src="images/Java OOP.jpg" alt="Certificate 2">
+                  <p>The Core Java certificate showcases my foundational expertise in Java programming, highlighting my understanding of essential concepts such as object-oriented programming, data structures, and Java's core libraries.</p>
+                  <button onclick="window.open('images/Java OOP.jpg', '_blank')">View</button>
+               </div>
+               <div class="certificate-card">
+                  <h3>Python Masterclass</h3>
+                  <img src="images/Python.jpg" alt="Certificate 3">
+                  <p>The Python certificate demonstrates my proficiency in Python programming, covering key concepts such as data structures, algorithms, and object-oriented programming to build efficient and scalable applications.</p>
+                  <button onclick="window.open('images/Python.jpg', '_blank')">View</button>
+               </div>
+            </div>
+            <button onclick="window.location.href='#projects'" class="my-button" id="certificate-button">My Projects</button>
+         </section>
+
+         <!--Project Section-->
+         <section id="projects">
+            <h1>My Projects</h1>
+            <div class="project-cards">
+               <div class="card" onclick="window.open('https://www.github.com', '_blank');"><!--Intentional Direction-->
+                  <!--Back Image-->
+                  <div class="image original" style="background-image: url('images/tbs.jpg');"></div>
+                  <!--Front Image-->
+                  <div class="image hover" style="background-image: url('images/tbs2.jpg');"></div>
+                  <!--Overlay that describes the project when hovered-->
+                  <div class="overlay">
+                     <div class="text">
+                        <h2>BlackHawk</h2>
+                        <p>A quadcopter with autopilot capabilities, designed to replace traditional CCTV systems, is operated via an app called BLKHWK-Planner, developed in C#.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="card" onclick="window.open('https://www.github.com', '_blank');">
+                  <div class="image original" style="background-image: url('images/parking.jpg');"></div>
+                  <div class="image hover" style="background-image: url('images/parking2.jpg');"></div>
+                  <div class="overlay">
+                     <div class="text">
+                        <h2>Parking Lot Finder</h2>
+                        <p>An Android app, developed in Kotlin, that locates available parking spaces in the vicinity of a recognized building.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="card" onclick="window.open('https://www.github.com', '_blank');">
+                  <div class="image original" style="background-image: url('images/arduino.jpg');"></div>
+                  <div class="image hover" style="background-image: url('images/arduino2.jpg');"></div>
+                  <div class="overlay">
+                     <div class="text">
+                        <h2>Wateruino</h2>
+                        <p>A plant watering device built with Arduino that monitors sunlight and time, automatically pumping water into the soil based on these factors.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="card" onclick="window.open('https://www.github.com', '_blank');">
+                  <div class="image original" style="background-image: url('images/snake.jpg');"></div>
+                  <div class="image hover" style="background-image: url('images/snake2.jpg');"></div>
+                  <div class="overlay">
+                     <div class="text">
+                        <h2>Snake 2D</h2>
+                        <p>A classic Snake game for Windows, developed using Python, with colorful graphics and a high-score tracking feature.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="card" onclick="window.open('https://www.github.com', '_blank');">
+                  <div class="image original" style="background-image: url('images/HissTerria.png');"></div>
+                  <div class="image hover" style="background-image: url('images/HissTerria2.png');"></div>
+                  <div class="overlay">
+                     <div class="text">
+                        <h2>HissTerria</h2>
+                        <p>A pixel RPG platformer game created in Unity with C#, available on all platforms, featuring procedurally generated levels that changes based on the player's skill.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="card" onclick="window.open('https://www.github.com', '_blank');">
+                  <div class="image original" style="background-image: url('images/retro.jpg');"></div>
+                  <div class="image hover" style="background-image: url('images/retro2.jpg');"></div>
+                  <div class="overlay">
+                     <div class="text">
+                        <h2>Retro Arcade</h2>
+                        <p>A mini arcade built with 3D-printed components and powered by a Raspberry Pi Zero, designed to play classic games and featuring a built-in mini HDMI port for TV.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <button onclick="window.location.href='#certifications'" class="my-button" id="project-button">My Certificates</button>
+         </section>
+
+         <!--Skills Sections-->
+         <section id="skills">
+            <h1>My Skills</h1>
+            <!--Circular progress bar container for technical skills-->
+            <div id="progress-container">
+               <!--Data Percentage determines the circular area-->
+               <div class="progress-bar html" data-percentage="90"><span>HTML</span><img id="html-icon" src="images/icons/html-day.png" alt="HTML icon"></div>
+               <div class="progress-bar css" data-percentage="85"><span>CSS</span><img id="css-icon" src="images/icons/css-day.png" alt="CSS icon"></div>
+               <div class="progress-bar js" data-percentage="80"><span>JavaScript</span><img id="js-icon" src="images/icons/js-day.png" alt="JS icon"></div>
+               <div class="progress-bar python" data-percentage="85"><span>Python</span><img id="python-icon" src="images/icons/python.png" alt="Python icon"></div>
+               <div class="progress-bar csharp" data-percentage="70"><span>C#</span><img id="cs-icon" src="images/icons/cs-day.png" alt="C# icon"></div>
+               <div class="progress-bar java" data-percentage="95"><span>Java</span><img id="java-icon" src="images/icons/java.png" alt="Java icon"></div>
+               <div class="progress-bar sql" data-percentage="70"><span>SQL</span><img id="sql-icon" src="images/icons/sql-day.png" alt="SQL icon"></div>
+               <div class="progress-bar php" data-percentage="60"><span>PHP</span><img id="php-icon" src="images/icons/php-day.png" alt="PHP icon"></div>
+            </div>
+            <!--Linear progress bar container for soft skills-->
+            <div id="skills-container">
+               <div class="skill-box">
+                  <img id="creat-icon" src="images/icons/creat-day.png" alt="Bulb logo">
+                  <h2>Creative Skills</h2>
+                  <div class="skill-bar">
+                     <div class="skill" style="width: 90%;"></div>
+                     <!--Width determines the length of progress bar-->
+                  </div>
+               </div>
+               <div class="skill-box">
+                  <img id="ana-icon" src="images/icons/ana-day.png" alt="Magnifying glass logo">
+                  <h2>Analytical Skills</h2>
+                  <div class="skill-bar">
+                     <div class="skill" style="width: 85%;"></div>
+                  </div>
+               </div>
+               <div class="skill-box">
+                  <img id="com-icon" src="images/icons/com-day.png" alt="Chat logo">
+                  <h2>Communication Skills</h2>
+                  <div class="skill-bar">
+                     <div class="skill" style="width: 90%;"></div>
+                  </div>
+               </div>
+               <div class="skill-box">
+                  <img id="org-icon" src="images/icons/org-day.png" alt="Friend circle logo">
+                  <h2>Organizational Skills</h2>
+                  <div class="skill-bar">
+                     <div class="skill" style="width: 80%;"></div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!--Service Section-->
+         <section id="services">
+            <h1>My Services</h1>
+            <h2>These are the services I offer</h2>
+            <!--Services cards-->
+            <div class="services-container">
+               <div class="service-card">
+                  <img id="service-mobile" src="images/icons/mobile-day.png" alt="Mobile icon">
+                  <div class="service-text">
+                     <h4>Mobile App Development</h4>
+                     <p>Build custom mobile apps for Android with intuitive interfaces and seamless performance.</p>
+                  </div>
+               </div>
+               <div class="service-card">
+                  <img id="service-desktop" src="images/icons/desktop-day.png" alt="Desktop icon">
+                  <div class="service-text">
+                     <h4>Desktop App Development</h4>
+                     <p>Develop reliable and high-performance desktop applications for Windows.</p>
+                  </div>
+               </div>
+               <div class="service-card">
+                  <img id="service-web" src="images/icons/web-day.png" alt="Web icon">
+                  <div class="service-text">
+                     <h4>Web Development</h4>
+                     <p>Design and develop dynamic, responsive websites and web applications.</p>
+                  </div>
+               </div>
+               <div class="service-card">
+                  <img id="service-game" src="images/icons/game-day.png" alt="Game IDE icon">
+                  <div class="service-text">
+                     <h4>Game Development</h4>
+                     <p>Create immersive 2D games for multiple platforms, including mobile, desktop, and consoles.</p>
+                  </div>
+               </div>
+               <div class="service-card">
+                  <img id="service-system" src="images/icons/system-day.png" alt="System icon">
+                  <div class="service-text">
+                     <h4>System Design & Development</h4>
+                     <p>Architect and develop robust systems that meet business needs with scalable solutions.</p>
+                  </div>
+               </div>
+               <div class="service-card">
+                  <img id="service-database" src="images/icons/database-day.png" alt="Database icon">
+                  <div class="service-text">
+                     <h4>Database Design & Management</h4>
+                     <p>Design, optimize, and manage databases to ensure the data is secure, scalable, and accessible.</p>
+                  </div>
+               </div>
+               <div class="service-card">
+                  <img id="service-ui" src="images/icons/ui-day.png" alt="UI/UX bubble icon">
+                  <div class="service-text">
+                     <h4>UI/UX Design</h4>
+                     <p>Create user-friendly interfaces and memorable experiences for users across all platforms.</p>
+                  </div>
+               </div>
+               <div class="service-card">
+                  <img id="service-ai" src="images/icons/ai-day.png" alt="AI system icon">
+                  <div class="service-text">
+                     <h4>AI/Machine Learning</h4>
+                     <p>Build intelligent systems that learn and adapt to user behavior with advanced AI and machine learning algorithms.</p>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!--Contact Section-->
+         <section id="contacts">
+            <h1>Contact Me</h1>
+            <!--Contact form-->
+            <form id="contacts-form" action="index.html"><!--Intentional Direction -->
+               <h2>If you have any opportunities, suggestions, or simply want to connect, feel free to reach out!</h2>
+               <h3>I’m Just a Message Away  😉</h3>
+               <div class="form-group">
+                  <label for="form-name">Name</label>
+                  <input type="text" id="form-name" name="name" placeholder="Your Name" required>
+               </div>
+               <div class="form-group">
+                  <label for="form-email">Email</label>
+                  <input type="email" id="form-email" name="email" placeholder="fakemail@femail.com" required>
+               </div>
+               <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="form-message" placeholder="Your message here..."></textarea>
+               </div>
+               <button class="my-button2" type="submit">Submit</button>
+            </form>
+         </section>
+      </main>
+
+      <!--Footer Section-->
+      <footer>
+         <div class="footer-container">
+            <div class="footer-buttons">
+               <!-- "Buttons" to call or mail me-->
+               <div class="contact-buttons">
+                  <p>Call or Mail Me On:</p>
+                  <a href="tel:1234567890" aria-label="my number"><img src="images/icons/phone.png" alt="Phone icon"></a>
+                  <a href="mailto:fakemail@femail.com" aria-label="my mail"><img src="images/icons/mail.png" alt="Mail icon"></a>
+               </div>
+               <div class="footer-social">
+                  <p>Follow Me On:</p>
+                  <a href="https://facebook.com" aria-label="Facebook" target="_blank"><img id="foot-facebook" src="images/icons/facebook-light.png" alt="Facebook logo"></a>
+                  <a href="https://twitter.com" aria-label="Twitter" target="_blank"><img id="foot-twitter" src="images/icons/twitter-light.png" alt="Twitter logo"></a>
+                  <a href="https://github.com" aria-label="GitHub" target="_blank"><img id="foot-github" src="images/icons/github-light.png" alt="GitHub logo"></a>
+                  <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank"><img id="foot-linkedin" src="images/icons/linkedin-light.png" alt="LinkedIn logo"></a>
+               </div>
+            </div>
+            <div class="footer-bottom">
+               <p>&copy; 2024 Allwin Paul. All Rights Reserved.</p>
+               <!--Scrolls back to home section -->
+               <button class="top-button" onclick="window.location.href='#home'">
+               Go Back to the Top
+               </button>
+            </div>
+         </div>
+      </footer>
+   </body>
+</html>
